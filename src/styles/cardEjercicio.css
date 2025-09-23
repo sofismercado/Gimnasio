@@ -1,0 +1,13 @@
+.cardEjercicio-grid {
+  display: flex;          /* activa flexbox */
+  justify-content: center; /* centra horizontalmente las cards */
+  align-items: center;    /* centra verticalmente si hay altura definida */
+  gap: 20px;              /* espacio entre cards */
+  flex-wrap: wrap;        /* que se muevan a la siguiente fila si no caben */
+}
+.card-title {
+  background-color: #0d47a1; /* azul oscuro, podés cambiar */
+  color: white;
+  padding: 10px;
+  
+}

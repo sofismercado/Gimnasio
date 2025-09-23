@@ -1,0 +1,58 @@
+/* Navbar.css */
+
+:root {
+  --color-secundario: #3498db;   /* azul */
+  --color-principal: #001aff;  /* verde */
+  --color-fondo: #f5f5f5;       /* gris claro */
+  --color-texto: #333333;       /* texto oscuro */
+  --color-grisclaro:  #a5e9da;
+  /* Azul principal */
+  --azul-frances-1: #0072BB; /* azul fuerte, ideal para botones principales */
+  /* Tonos más claros */
+  --azul-frances-2: #3399DD; /* para hover de botones o tarjetas */
+  --azul-frances-3: #66b3ffad; /* fondos suaves o destacados */
+  /* Tonos muy claros / background */
+  --azul-frances-4: #CCE6FF; /* para secciones o cards claras */
+  /* Azul oscuro / acentos */
+  --azul-frances-5: #005B8A; /* textos importantes, títulos, iconos */
+  /* Gris neutro para complementar */
+  --gris-claro: #F5F5F5;
+  --gris-medio: #CCCCCC;
+  --gris-oscuro: #333333;
+}
+
+nav {
+  background-color: var(--azul-frances-5);
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: var(--color-grisclaro); /* cambia de color al pasar el mouse */
+}
+/*...........................*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* 👈 separa izquierda y derecha */
+  align-items: center;            /* centra verticalmente */
+  padding: 10px 20px;
+  background-color: #0d47a1;      /* azul ejemplo */
+}
+
+.nav-left a {
+  margin-right: 15px;
+ 
+}
+
+

@@ -1,0 +1,24 @@
+/* Loading.css */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ocupa toda la pantalla */
+  background-color: #fff;
+  opacity: 1;                 /* opacidad inicial */
+  transition: opacity 0.5s ease; /* fade-out suave */
+}
+.loading-container.fade-out {
+  opacity: 0; /* desaparece */
+}
+
+.loading-logo {
+  width: 300px;
+  height: 200px;
+  animation: spin 2s linear infinite; /* opcional para animarlo */
+}
+
+@keyframes spin {
+ 
+}

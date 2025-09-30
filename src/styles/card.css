@@ -21,9 +21,10 @@
 
 
 .card {
+  background: linear-gradient(135deg, #4da9ff, #8fc9ff);
   width: 100%;
   display: block;
-  background-color:var(--azul-frances-3);
+  
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--color-grisclaro);
   overflow: hidden;

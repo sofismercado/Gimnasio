@@ -67,6 +67,10 @@ button:focus-visible {
   }
 }
 */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 :root {
   --color-secundario: #3498db;   /* azul */

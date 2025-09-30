@@ -8,7 +8,7 @@ import PageDay from './componentes/PageDay';
 import SuperAdmin from './componentes/SuperAdmin';
 import PageEntrada from './componentes/PageEntrada';
 import PageEjercicios from './componentes/PageEjercicios';
-
+import FormNewUser from "./componentes/FormNewUser";
 
 
 function App() {
@@ -40,6 +40,8 @@ function App() {
       <Route path="/PageDay" element={<PageDay/>}/>
       <Route path="/PageEntrada" element={<PageEntrada/>}/>
       <Route path="/PageEjercicios" element={<PageEjercicios/>}/>
+      <Route path="/SuperAdmin" element={<SuperAdmin/>}/>
+      <Route path="/FormNewUser" element={<FormNewUser />} />
 
       </Routes>
     </Router>

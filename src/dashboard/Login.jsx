@@ -25,7 +25,12 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>FYP</h2>
+        <img 
+          src="./imagenes/logo.jpeg" 
+          alt="Logo FYP Gimnasio" 
+          style={{ width: "200px", height: "auto", marginBottom: "20px" }} 
+        />
+        
         <form onSubmit={handleSubmit}>
           <input 
             type="email" 

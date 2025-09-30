@@ -17,7 +17,7 @@ const CardRutina= () => {
 
 
       <div className="card-content">
-        <h3>Ejercicios </h3>
+        <h2>Ejercicios </h2>
         <p></p>
         <button 
         onClick={handleVerMas}

@@ -15,7 +15,7 @@ const CardDia = () => {
       </div>
       
       <div className="card-content">
-        <h3>Día: </h3>
+        <h2>Día: </h2>
         <p></p>
         <button 
         onClick={handleVerMas}

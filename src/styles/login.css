@@ -26,14 +26,17 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: var(--azul-frances-3);
+  background-image: url('/imagenes/fondo2.png');
+  background-size: cover;       /* la imagen cubre toda la pantalla */
+  background-position: center;  /* centrada */
+  background-repeat: no-repeat; /* no se repite */
 }
 
 .login-box {
-  background: var(--color-fondo);
+  background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px var(--azul-frances-5);
+  box-shadow: 0px 4px 12px var(--azul-frances-4);
   width: 300px;
   text-align: center;
 }

@@ -1,6 +1,6 @@
 // Loading.js
 import React from "react";
-import "../styles/Loanding.css"; // para estilos
+import "../styles/Loanding.css"; 
 
 const Loading = () => {
   return (

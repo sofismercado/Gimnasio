@@ -10,9 +10,9 @@ import Navbar from "./Navbar";
 const PageDay = () => {
   return (
     <div >
-      <Navbar />
+      
       <div >
-        <h2 style={{textAlign: "center" }}>Sofi esta es tu rutina del dia de hoy :</h2>
+        <h2 style={{textAlign: "center" }}>Rutina del dia de hoy :</h2>
                
         {/*<p style={{ marginLeft: "30px" }}>Comentario:</p>*/}
       </div>

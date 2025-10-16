@@ -12,18 +12,19 @@ const FormNewUser = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    rol: "usuario",
   });
 
-  const [errors, setErrors] = useState({}); // errores locales si querés validar
+  const [errors, setErrors] = useState({}); // errores locales 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
-    // Validación simple
+    //completar validacion
     const newErrors = {};
     if (!formData.name) newErrors.name = "El nombre es obligatorio";
     if (!formData.email) newErrors.email = "El email es obligatorio";
@@ -36,20 +37,53 @@ const FormNewUser = () => {
       return;
     }
 
-    // Aquí iría la lógica de guardar el usuario (API o state)
+   
+    try {
+      const response = await fetch("http://localhost:4000/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          rol: formData.rol
+        }), // envio solo lo necesario
+      });
+
+      const data = await response.json();
+      console.log("Respuesta del servidor:", data);
+
+      if (response.ok) {
+     
+      setUsuario({
+        nombre: formData.name,
+        rol: formData.rol_id
+      });
+      alert("Usuario registrado con éxito!");
+      navigate("/user"); // redirige a la pagina de usuario
+      } else {
+        alert("Error: " + data.message);
+      }
+      } catch (error) {
+      console.error("Error al conectar con el backend:", error);
+    }
+
     console.log("Usuario creado:", formData);
 
-    // Redirigir al perfil o página principal
+   
     navigate("/user");
   };
   
   return (
    
     <div>
-      <Navbar/>
+      
+     
           <div className="login-container">
         <div className="login-box">
-          
+           <h1>Nuevo usuario</h1>
           <form onSubmit={handleSubmit} noValidate>
             <div>
               <label>Nombre:</label>
@@ -96,6 +130,19 @@ const FormNewUser = () => {
                 <p style={{ color: "red" }}>{errors.confirmPassword}</p>
               )}
             </div>
+            <div>
+              <label>Rol:</label>
+              <select
+                name="rol"
+                value={formData.rol_id}
+                onChange={handleChange}>
+            
+                <option value="usuario">Usuario</option>
+                <option value="administrador">Administrador</option>
+                <option value="superadministrador">Superadministrador</option>
+              </select>
+            </div>
+
 
             <button type="submit">Crear Usuario</button>
           </form>

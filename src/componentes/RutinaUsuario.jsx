@@ -9,29 +9,29 @@ import CardEntrada from "./CardEntrada";
 import Navbar from "./Navbar";
 import ThemeToggle from "./Teme";
 import { Link } from "react-router-dom"; 
-const RutinaUsuario = () => {
+const RutinaUsuario = ({usuario}) => {
 
 
   return (
     <div className="user-page">
        
-      <Navbar />
+     
       <div className="theme-toggle-container ">
          <ThemeToggle />
        </div>
       
       <div className="user-header">
-        <h2 style={{ textAlign: "center" }}>¡Bienvenida Sofi! </h2>
-        <p style={{ textAlign: "center" }}> Acá podés ver tus rutinas y progreso:</p>
+       
+        <p style={{ textAlign: "center" }}> Acá podés ver tus rutinas:</p>
       </div>
      
        
-        {/* Botón que redirige a SuperAdmin */}
+        {/* Botón SuperAdmin 
         <div style={{ textAlign: "center", marginTop: "1rem" }}>
           <Link to="/SuperAdmin">
             <button className="admin-btn">Soy administrador</button>
           </Link>
-        </div>
+        </div>*/}
      
 
       <div className="cardEjercicio-grid">

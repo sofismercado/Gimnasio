@@ -8,10 +8,10 @@ import Navbar from "./Navbar";
 const PageEntrada = () => {
   return (
     <div >
-      <Navbar />
+      
       <div >
-        <h2 style={{ marginLeft: "30px" }}>Sofi esta es tu entrada en calor del dia de hoy:</h2>
-        <p style={{ marginLeft: "30px" }}>Comentario:</p>
+        <h2 style={{ marginLeft: "30px" }}>Entrada en calor del dia de hoy:</h2>
+        
       </div>
 
       <div className="cardEjercicio-grid">

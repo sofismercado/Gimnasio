@@ -7,7 +7,7 @@ import "../styles/card.css"
 const CardEjercicio = () => {
    const navigate = useNavigate();
    const handleVerMas = () => {
-   navigate(""); // 👈 redirige a la rutina del día
+   navigate(""); 
    };
   return (
     <div className="card ">

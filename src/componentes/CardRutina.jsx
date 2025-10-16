@@ -7,7 +7,7 @@ import "../styles/card.css"
 const CardRutina= () => {
    const navigate = useNavigate();
    const handleVerMas = () => {
-   navigate("/PageEjercicios"); // 👈 redirige a la rutina del día
+   navigate("/PageEjercicios"); 
    };
   return (
     <div className="card ">

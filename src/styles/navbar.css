@@ -29,13 +29,21 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;  /*..............*/
   gap: 20px;
+ 
+}
+nav ul li { /*..............*/
+  display: flex;
+  align-items: center;  
+  height: 40px;   /*..............*/       
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  
 }
 
 nav ul li a:hover {
@@ -48,6 +56,7 @@ nav ul li a:hover {
   align-items: center;            /* centra verticalmente */
   padding: 10px 20px;
   background-color: #0d47a1;      /* azul ejemplo */
+  
 }
 
 .nav-left a {
@@ -55,4 +64,22 @@ nav ul li a:hover {
  
 }
 
+
+.usuario-saludo {
+  background-color: var(--azul-frances-1);       /* color del cuadrado */
+  color: #fff;                  /* color del texto */
+  padding: 8px 15px;            /* espacio interno */
+  border-radius: 50px;          /* bordes redondeados */
+  border: 1px solid var(--azul-frances-1);    /* borde del cuadrado */
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;        /* para que sea un cuadradito */
+  margin-right: 20px;           /* separarlo del resto */
+  box-shadow: 0 2px 5px rgb(255, 255, 255); /* sombrita suave */
+}
+
+.usuario-nombre {
+  color: rgb(250, 194, 11);               /* el nombre en dorado */
+  text-transform: capitalize;
+}
 

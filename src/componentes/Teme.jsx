@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
-const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+export const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-  }, [darkMode]);
+    localStorage.setItem("theme", theme);
+    // Cambiamos el fondo del body directamente
+    document.body.style.backgroundColor = theme === "dark" ? "#222" : "#fff";
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? " Modo claro" : " Modo oscuro"}
-    </button>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
-
-export default ThemeToggle;

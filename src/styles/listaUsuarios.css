@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* muy recomendable para que el ancho incluya el padding */
+ 
+}
+
 :root {
   --color-secundario: #3498db;   /* azul */
   --color-principal: #001aff;  /* verde */
@@ -12,70 +19,45 @@
   /* Tonos muy claros / background */
   --azul-frances-4: #CCE6FF; /* para secciones o cards claras */
   /* Azul oscuro / acentos */
-  --azul-frances-5: #8cc4e0; /* textos importantes, títulos, iconos */
+  --azul-frances-5: #005B8A; /* textos importantes, títulos, iconos */
   /* Gris neutro para complementar */
   --gris-claro: #F5F5F5;
   --gris-medio: #CCCCCC;
   --gris-oscuro: #333333;
 }
+.orden{ 
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
 
+}
+.fondo{
+    background-color:var(--azul-frances-1);
+  transform: scale(1.05);
+}
+.cadausuario{
+    background-color: #a5e9da;
+    padding: 10px;
+}
 
-.card {
-  background: linear-gradient(135deg, #4da9ff, #8fc9ff);
-  width: 100%;
-  display: block;
+.prueba{
+   
+   width: 100%;  
   
-  border-radius: 10px;
-  box-shadow: 0 4px 12px var(--azul-frances-3);
-  overflow: hidden;
-  margin: 20px;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
 }
-
-
-
-
-.card img {
+button {
   width: 100%;
- 
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 15px;
-}
-
-.card-content h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.card-content p {
-  margin: 10px 0;
-  color: #555;
-  font-size: 0.95rem;
-}
-
-.card-content button {
-  background-color:var(--gris-claro);
-  color: rgb(19, 29, 85);
+  padding: 10px;
+  margin-top: 12px;
+  background: var(--color-secundario);
+  color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
   box-shadow: 0 4px 8px var(--azul-frances-1);
   transition: background 0.3s, transform 0.2s;
 }
-
-.card-content button:hover {
+button:hover {
   background-color:var(--azul-frances-1);
   transform: scale(1.01);
 }

@@ -5,6 +5,7 @@ import "../styles/login.css";
 
 
 
+
 const Login = ({ setUsuario }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,6 +43,7 @@ const Login = ({ setUsuario }) => {
         //});esto hay que sacar en caso que no funcione............................
         // creo el objeto usuario
       const userData = {
+        id: data.id,
          nombre: data.nombre,
           rol: data.rol
       };

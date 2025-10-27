@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Login from './dashboard/Login' // <-- Asegúrate de tener este import si no lo pegaste
-import Loading from './componentes/Loanding';
-// 👇 AÑADE: useNavigate
+import Login from './dashboard/Login' 
+import Loading from './componentes/Loanding'
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom"; 
 import RutinaUsuario from './componentes/RutinaUsuario';
 import PageDay from './componentes/PageDay';
@@ -10,24 +9,33 @@ import PageEntrada from './componentes/PageEntrada';
 import PageEjercicios from './componentes/PageEjercicios';
 import FormNewUser from "./componentes/FormNewUser";
 import Navbar from "./componentes/Navbar";
+import ListaUsuarios from "./componentes/ListaUsuarios";
+import AsignarRutina from "./componentes/AsignarRutina";
+import RutinaAsignada from "./componentes/RutinaAsignada";
+import Administrador from "./componentes/Administrador";
+import ListaAdministrador from "./componentes/ListaAdministrador";
+import RutaProtegida from "./componentes/RutaProtegida";
 
+//--------------------------------
+
+//--------------------------------
 
 
 const AppContent = ({ usuario, setUsuario }) => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // cerrar sesión
+    
     const handleLogout = () => {
-        // 1. Limpia el estado (oculta la Navbar)
+        
         setUsuario(null); 
-        // 2. Limpia el localStorage (para que no aparezca al recargar)
+        
         localStorage.removeItem('usuarioLogueado');
-        // 3. Redirige al Login
+        
         navigate('/');
     };
 
-    // Condición: La Navbar 
+    
     const showNavbar = usuario && location.pathname !== '/';
 
     return (
@@ -37,12 +45,19 @@ const AppContent = ({ usuario, setUsuario }) => {
 
             <Routes>
                 <Route path="/" element={<Login setUsuario={setUsuario}/>} />
-                <Route path="/RutinaUsuario" element={<RutinaUsuario usuario={usuario}/>} />
-                <Route path="/PageDay" element={<PageDay/>}/>
-                <Route path="/PageEntrada" element={<PageEntrada/>}/>
-                <Route path="/PageEjercicios" element={<PageEjercicios/>}/>
-                <Route path="/SuperAdmin" element={<SuperAdmin/>}/>
-                <Route path="/FormNewUser" element={<FormNewUser />} />
+                
+                
+                <Route path="/RutinaUsuario" element={<RutaProtegida usuario={usuario}><RutinaUsuario usuario={usuario}/></RutaProtegida>} />
+                <Route path="/PageDay" element={<RutaProtegida usuario={usuario}><PageDay/></RutaProtegida>}/>
+                <Route path="/PageEntrada" element={<RutaProtegida usuario={usuario}><PageEntrada/></RutaProtegida>}/>
+                <Route path="/PageEjercicios" element={<RutaProtegida usuario={usuario}><PageEjercicios/></RutaProtegida>}/>
+                <Route path="/SuperAdmin" element={<RutaProtegida usuario={usuario}><SuperAdmin/></RutaProtegida>}/>
+                <Route path="/FormNewUser" element={<RutaProtegida usuario={usuario}><FormNewUser /></RutaProtegida>} />
+                <Route path="/ListaUsuarios" element={<RutaProtegida usuario={usuario}><ListaUsuarios/></RutaProtegida>}/>
+                <Route path="/AsignarRutina/:id" element={<RutaProtegida usuario={usuario}><AsignarRutina/></RutaProtegida>}/>
+                <Route path="/RutinaAsignada/:id" element={<RutaProtegida usuario={usuario}><RutinaAsignada /></RutaProtegida>} />
+                <Route path="/Administrador" element={<RutaProtegida usuario={usuario}><Administrador/></RutaProtegida>}/>
+                <Route path="/ListaAdministrador" element={<RutaProtegida usuario={usuario}><ListaAdministrador/></RutaProtegida>}/>
             </Routes>
         </>
     );
@@ -62,10 +77,10 @@ function App() {
     const usuarioGuardado = localStorage.getItem('usuarioLogueado');
     if (usuarioGuardado) {
         try {
-            // Si existe, lo convierto de string a objeto  y lo guardamos en el estado
+            
             setUsuario(JSON.parse(usuarioGuardado));
         } catch (e) {
-            // Manejo de error si el JSON es inválido
+            
             console.error("Error al parsear usuario de localStorage:", e);
             localStorage.removeItem('usuarioLogueado');
         }
